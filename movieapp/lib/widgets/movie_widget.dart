@@ -3,10 +3,9 @@ import 'package:movieapp/screens/detail.screen.dart';
 
 class Movie extends StatelessWidget {
   final String backdropPath;
-  const Movie({
-    super.key,
-    required this.backdropPath,
-  });
+  final int id;
+
+  const Movie({super.key, required this.backdropPath, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,10 @@ class Movie extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetaileScreen(backdropPath: backdropPath),
+            builder: (context) => DetaileScreen(
+              backdropPath: backdropPath,
+              id: id,
+            ),
           ),
         );
       },

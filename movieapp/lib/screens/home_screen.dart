@@ -56,7 +56,10 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       itemBuilder: (context, index) {
         var movie = snapshot.data![index];
-        return Movie(backdropPath: movie.backdropPath);
+        return Movie(
+          backdropPath: movie.backdropPath,
+          id: movie.id,
+        );
       },
       separatorBuilder: (context, index) => const SizedBox(width: 40),
     );

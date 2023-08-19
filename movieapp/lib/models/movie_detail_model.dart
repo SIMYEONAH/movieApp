@@ -1,11 +1,20 @@
 class MovieDetailModel {
-  final String title, popularity, posterPath, overview, id, genres;
+  num id;
+  double voteAverage;
+  String title, overview;
+  List<Map<String, dynamic>> genres;
 
-  MovieDetailModel.fromJson(Map<String, dynamic> json)
-      : title = json['original_title'],
-        popularity = json['popularity'],
-        posterPath = json['poster_path'],
-        overview = json['overview'],
-        id = json['id'],
-        genres = json['genres'];
+  MovieDetailModel(
+      {required this.id,
+      required this.voteAverage,
+      required this.title,
+      required this.genres,
+      required this.overview});
+
+  MovieDetailModel.fromJson(Map<String, dynamic> jsonData)
+      : genres = jsonData['genres'].cast<Map<String, dynamic>>(),
+        id = jsonData['id'],
+        overview = jsonData['overview'],
+        title = jsonData['title'],
+        voteAverage = jsonData['vote_average'].toDouble();
 }
