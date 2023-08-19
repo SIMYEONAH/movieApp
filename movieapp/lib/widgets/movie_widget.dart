@@ -22,21 +22,24 @@ class Movie extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 450,
-            clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 15,
-                  offset: const Offset(10, 10),
-                  color: Colors.black.withOpacity(0.3),
-                )
-              ],
+          Hero(
+            tag: backdropPath,
+            child: Container(
+              width: 450,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 15,
+                    offset: const Offset(10, 10),
+                    color: Colors.black.withOpacity(0.3),
+                  )
+                ],
+              ),
+              child:
+                  Image.network("https://image.tmdb.org/t/p/w500$backdropPath"),
             ),
-            child:
-                Image.network("https://image.tmdb.org/t/p/w500$backdropPath"),
           ),
           const SizedBox(
             height: 10,
