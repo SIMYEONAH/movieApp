@@ -1,10 +1,6 @@
 class MovieModel {
-  final String title, overview, voteAverage, id, posterPath;
+  final String backdropPath;
 
   MovieModel.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        overview = json['overview'],
-        voteAverage = json['voteAverage'],
-        id = json['id'],
-        posterPath = json['posterPath'];
+      : backdropPath = json["backdrop_path"];
 }

@@ -13,8 +13,7 @@ class ApiService {
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final movies = jsonDecode(response.body);
-      for (var movie in movies) {
-        movieInstances.add(MovieModel.fromJson(movie));
+      for (var movie in movies["results"]) {
         final instance = MovieModel.fromJson(movie);
         movieInstances.add(instance);
       }
