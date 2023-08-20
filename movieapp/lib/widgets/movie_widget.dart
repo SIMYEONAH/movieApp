@@ -4,8 +4,14 @@ import 'package:movieapp/screens/detail.screen.dart';
 class Movie extends StatelessWidget {
   final String backdropPath;
   final int id;
+  final String posterPath;
 
-  const Movie({super.key, required this.backdropPath, required this.id});
+  const Movie({
+    super.key,
+    required this.backdropPath,
+    required this.id,
+    required this.posterPath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +23,7 @@ class Movie extends StatelessWidget {
             builder: (context) => DetaileScreen(
               backdropPath: backdropPath,
               id: id,
+              posterPath: posterPath,
             ),
           ),
         );
@@ -27,7 +34,7 @@ class Movie extends StatelessWidget {
           Hero(
             tag: backdropPath,
             child: Container(
-              width: 450,
+              width: 150,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
@@ -40,7 +47,7 @@ class Movie extends StatelessWidget {
                 ],
               ),
               child:
-                  Image.network("https://image.tmdb.org/t/p/w500$backdropPath"),
+                  Image.network("https://image.tmdb.org/t/p/w500$posterPath"),
             ),
           ),
           const SizedBox(

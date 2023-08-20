@@ -5,11 +5,13 @@ import 'package:movieapp/services/api_service.dart';
 class DetaileScreen extends StatefulWidget {
   final String backdropPath;
   final int id;
+  final String posterPath;
 
   const DetaileScreen({
     super.key,
     required this.backdropPath,
     required this.id,
+    required this.posterPath,
   });
 
   @override
@@ -23,7 +25,7 @@ class _DetaileScreenState extends State<DetaileScreen> {
   void initState() {
     super.initState();
     movieDetail = ApiService.getDetailById(widget.id);
-    print("https://image.tmdb.org/t/p/w500${widget.backdropPath}");
+    // print("https://image.tmdb.org/t/p/w500${widget.backdropPath}");
   }
 
   String _extractGenres(List<Map<String, dynamic>> genres) {
@@ -37,7 +39,7 @@ class _DetaileScreenState extends State<DetaileScreen> {
         image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
-              "https://image.tmdb.org/t/p/w500${widget.backdropPath}"),
+              "https://image.tmdb.org/t/p/w500${widget.posterPath}"),
           opacity: 0.4,
         ),
       ),
@@ -45,8 +47,8 @@ class _DetaileScreenState extends State<DetaileScreen> {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.green,
+          // backgroundColor: Colors.white,
+          foregroundColor: Colors.white,
           title: const Text(
             "Back to list",
             style: TextStyle(

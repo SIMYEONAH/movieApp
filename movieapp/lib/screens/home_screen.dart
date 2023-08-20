@@ -59,6 +59,7 @@ class HomeScreen extends StatelessWidget {
         return Movie(
           backdropPath: movie.backdropPath,
           id: movie.id,
+          posterPath: movie.posterPath,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(width: 40),
