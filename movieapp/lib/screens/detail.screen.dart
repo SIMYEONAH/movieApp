@@ -40,7 +40,7 @@ class _DetaileScreenState extends State<DetaileScreen> {
           fit: BoxFit.cover,
           image: NetworkImage(
               "https://image.tmdb.org/t/p/w500${widget.posterPath}"),
-          opacity: 0.4,
+          opacity: 0.5,
         ),
       ),
       child: Scaffold(
@@ -73,21 +73,30 @@ class _DetaileScreenState extends State<DetaileScreen> {
                     children: [
                       Text(
                         snapshot.data!.title,
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
                       Text(
                         snapshot.data!.overview,
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
                       Text(
                         '${_extractGenres(snapshot.data!.genres)} / ${snapshot.data!.voteAverage}',
-                        style: const TextStyle(fontSize: 22),
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   );

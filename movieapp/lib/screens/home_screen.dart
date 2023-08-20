@@ -26,11 +26,14 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 100,
                   ),
-                  const Text(
-                    "Popular Movies",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w600,
+                  const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Popular Movies",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -57,10 +60,9 @@ class HomeScreen extends StatelessWidget {
       itemBuilder: (context, index) {
         var movie = snapshot.data![index];
         return Movie(
-          backdropPath: movie.backdropPath,
-          id: movie.id,
-          posterPath: movie.posterPath,
-        );
+            backdropPath: movie.backdropPath,
+            id: movie.id,
+            posterPath: movie.posterPath);
       },
       separatorBuilder: (context, index) => const SizedBox(width: 40),
     );
