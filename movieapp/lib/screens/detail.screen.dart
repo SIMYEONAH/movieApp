@@ -68,37 +68,39 @@ class _DetaileScreenState extends State<DetaileScreen> {
               future: movieDetail,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        snapshot.data!.title,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
+                  return Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          snapshot.data!.title,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        snapshot.data!.overview,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
+                        const SizedBox(
+                          height: 15,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        '${_extractGenres(snapshot.data!.genres)} / ${snapshot.data!.voteAverage}',
-                        style: const TextStyle(
-                          fontSize: 22,
-                          color: Colors.white,
+                        Text(
+                          snapshot.data!.overview,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          '${_extractGenres(snapshot.data!.genres)} / ${snapshot.data!.voteAverage}',
+                          style: const TextStyle(
+                            fontSize: 22,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 } else {
                   return const Text("no data");

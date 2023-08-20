@@ -37,11 +37,15 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                    // child: Text(
+                    //   "Now in Cinams",
+                    //   style: TextStyle(
+                    //     fontSize: 32,
+                    //     fontWeight: FontWeight.w600,
+                    //   ),
+                    // ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  Expanded(child: makeList(snapshot))
+                  Expanded(child: makeList(snapshot)),
                 ],
               );
             }
