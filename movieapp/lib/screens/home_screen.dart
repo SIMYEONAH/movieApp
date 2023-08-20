@@ -9,6 +9,8 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   Future<List<MovieModel>> movies = ApiService.getPopularMovides();
+  Future<List<MovieModel>> playing = ApiService.getNowPlayingMovides();
+  Future<List<MovieModel>> coming = ApiService.getComingMovides();
 
   @override
   Widget build(BuildContext context) {
